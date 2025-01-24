@@ -1,5 +1,6 @@
 // Task 1: Set up folders and move your files
 const express = require('express')
+const { dirname } = require('path')
 const app = express()
 
 const inventory = [
@@ -73,15 +74,18 @@ app.use((req, res, next) => {
 })
 
 // Task 1: Set up the static middleware
-
+app.get('/home',(req,res) => {
+  res.sendfile(--dirname + '/public/home.html');
+})
 
 
 // Task 2: Set up the route handler for / to send back the index.html file
-
-
+app.get("/", (req,res) => {
+  res.render(index.html, data);
+})
 
 // Task 3: Set up the route handler for /mens which sends back category.ejs with the men's array
-
+app.get
 
 
 // Task 4: Plug in the values in category.ejs to get the page working
